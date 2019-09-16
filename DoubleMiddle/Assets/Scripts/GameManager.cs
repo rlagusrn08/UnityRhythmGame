@@ -17,6 +17,15 @@ public class GameManager : MonoBehaviour
     //노트들의 스피드 정하기
     public float noteSpeed;
 
+    /*
+     * 판정변수
+     * BAD : 1
+     * GOOD : 2
+     * PERFECT : 3
+     * MISS : 4
+     */
+    public enum judges { NONE = 0, BAD, GOOD, PERFECT, MISS};
+
     void Start()
     {
         
