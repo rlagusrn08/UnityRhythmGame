@@ -29,7 +29,7 @@ public class NoteController : MonoBehaviour
     private ObjectPooler noteObjectPooler;
     private List<Note> notes = new List<Note>();
     private float x, z, startY = 5.0f;
-    private float beatInterval = 1f;
+    private float beatInterval = 0.1f;
 
     void MakeNote(Note note)
     {
@@ -46,18 +46,19 @@ public class NoteController : MonoBehaviour
     {
         //노트 테스트
         noteObjectPooler = gameObject.GetComponent<ObjectPooler>();
-        notes.Add(new Note(1, 1));
-        notes.Add(new Note(2, 1));
-        notes.Add(new Note(3, 3));
-        notes.Add(new Note(4, 3));
-        notes.Add(new Note(1, 5));
-        notes.Add(new Note(2, 6));
-        notes.Add(new Note(3, 7));
-        notes.Add(new Note(4, 8));
-        notes.Add(new Note(2, 9));
-        notes.Add(new Note(4, 10));
+        notes.Add(new Note(1, 10));
+        notes.Add(new Note(2, 10));
+        notes.Add(new Note(3, 30));
+        notes.Add(new Note(4, 30));
+        notes.Add(new Note(1, 50));
+        notes.Add(new Note(2, 60));
+        notes.Add(new Note(3, 70));
+        notes.Add(new Note(4, 80));
+        notes.Add(new Note(2, 90));
+        notes.Add(new Note(4, 100));
+        notes.Add(new Note(4, 110));
         //모든 노트를 정해진 시간에 출발하도록 설정
-        for(int i = 0; i<notes.Count; i++)
+        for (int i = 0; i<notes.Count; i++)
         {
             StartCoroutine(AwaitMakeNote(notes[i]));
         }
