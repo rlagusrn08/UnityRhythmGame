@@ -46,8 +46,24 @@ public class GameManager : MonoBehaviour
     public enum judges { NONE = 0, BAD, GOOD, PERFECT, MISS};
 
 
+    //음악 처리
+    private AudioSource audioSource;
+    private string music = "Redafs.com - Our Inspiring Corporate";
+
+    //음악 실행
+    void MusicStart()
+    {
+        //리소스에서 음악을 불러와 재생.
+        AudioClip audioClip = Resources.Load<AudioClip>("Beats/" + music);
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = audioClip;
+        audioSource.Play();
+    }
+
     void Start()
     {
+        Invoke("MusicStart", 1); //1초 후 음악 재생
+
         judgementSpriteRenderer = judgeUI.GetComponent<Image>();
         judgementSpriteAnimator = judgeUI.GetComponent<Animator>();
         scoreText = scoreUI.GetComponent<Text>();
