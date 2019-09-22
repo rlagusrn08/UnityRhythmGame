@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     //음악 처리
     private AudioSource audioSource;
-    private string music = "Redafs.com - Our Inspiring Corporate";
+    public string music = "1";
 
     //음악 실행
     void MusicStart()

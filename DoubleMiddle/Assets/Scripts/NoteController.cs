@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class NoteController : MonoBehaviour
@@ -20,7 +22,7 @@ public class NoteController : MonoBehaviour
     {
         int noteType = note.noteType;
         int order = note.order;
-        yield return new WaitForSeconds(order * beatInterval);
+        yield return new WaitForSeconds(startingPoint + order * beatInterval);
         MakeNote(note);
     }
 
@@ -29,7 +31,7 @@ public class NoteController : MonoBehaviour
     private ObjectPooler noteObjectPooler;
     private List<Note> notes = new List<Note>();
     private float x, z, startY = 5.0f;
-    private float beatInterval = 0.1f;
+
 
     void MakeNote(Note note)
     {
@@ -42,21 +44,45 @@ public class NoteController : MonoBehaviour
         obj.SetActive(true);
     }
 
+    private string musicTitle;
+    private string musicArtist;
+    private int bpm;
+    private int divider;
+    private float startingPoint;
+    private float beatCount;
+    private float beatInterval;
+
     void Start()
     {
         //노트 테스트
         noteObjectPooler = gameObject.GetComponent<ObjectPooler>();
-        notes.Add(new Note(1, 10));
-        notes.Add(new Note(2, 10));
-        notes.Add(new Note(3, 30));
-        notes.Add(new Note(4, 30));
-        notes.Add(new Note(1, 50));
-        notes.Add(new Note(2, 60));
-        notes.Add(new Note(3, 70));
-        notes.Add(new Note(4, 80));
-        notes.Add(new Note(2, 90));
-        notes.Add(new Note(4, 100));
-        notes.Add(new Note(4, 110));
+        // 리소스에서 비트 텍스트 파일을 읽도록 함.
+        TextAsset textAsset = Resources.Load<TextAsset>("Beats/" + GameManager.instance.music);
+        StringReader reader = new StringReader(textAsset.text);
+        //첫 번째 줄 읽기 곡이름
+        musicTitle = reader.ReadLine();
+        //두 번째 줄 읽기 아티스트 이름
+        musicArtist = reader.ReadLine();
+        // 세 번째 줄 bpm divider 시작시간 읽기
+        string beatInformation = reader.ReadLine();
+        bpm = Convert.ToInt32(beatInformation.Split(' ')[0]);
+        divider = Convert.ToInt32(beatInformation.Split(' ')[1]);
+        startingPoint = (float)Convert.ToDouble(beatInformation.Split(' ')[2]);
+        //1초마다 떨어지는 비트 개수
+        beatCount = (float)bpm / divider;
+        //비트가 떨어지는 간격
+        beatInterval = 1 / beatCount;
+        //각 비트가 떨어지는 위치와 시간
+        string line;
+        while ((line = reader.ReadLine()) != null)
+        {
+            Note note = new Note(
+                Convert.ToInt32(line.Split(' ')[0]) + 1,
+                Convert.ToInt32(line.Split(' ')[1])
+            );
+            notes.Add(note);
+           
+        }
         //모든 노트를 정해진 시간에 출발하도록 설정
         for (int i = 0; i<notes.Count; i++)
         {
