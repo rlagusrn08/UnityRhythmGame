@@ -60,6 +60,22 @@ public class GameManager : MonoBehaviour
         audioSource.Play();
     }
 
+    //음악 정지
+    bool pause = false;
+    public void pauseMusic()
+    {
+        if (pause)
+        {
+            pause = false;
+            audioSource.UnPause();
+        }
+        else
+        {
+            pause = true;
+            audioSource.Pause();
+        }
+    }
+
     void Start()
     {
         Invoke("MusicStart", 1); //1초 후 음악 재생
