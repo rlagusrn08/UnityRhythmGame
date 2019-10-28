@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public float noteSpeed;
 
     public GameObject scoreUI;
-    private float score;
+    public float score;
     private Text scoreText;
     
     // 콤보 UI
@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     private int combo;
     private Text comboText;
     private Animator comboAnimator;
+    public int maxCombo;
 
     //판정 이미지
     public GameObject judgeUI;
@@ -142,6 +143,10 @@ public class GameManager : MonoBehaviour
         else
         {
             comboAnimator.SetTrigger("Hide");
+        }
+        if (maxCombo < combo)
+        {
+            maxCombo = combo;
         }
     }
 
