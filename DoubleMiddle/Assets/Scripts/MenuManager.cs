@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     bool pause = false;
-
+    float temp;
     public GameObject menuCanvas;
     public GameObject gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        temp = GameManager.instance.noteSpeed;
         menuCanvas.SetActive(false);
     }
 
@@ -36,7 +36,7 @@ public class MenuManager : MonoBehaviour
             pause = false;
             Time.timeScale = 1;
             GameManager.instance.pauseMusic();
-            GameManager.instance.noteSpeed = 0.09f;
+            GameManager.instance.noteSpeed = temp;
             menuCanvas.SetActive(false);
         }
         else

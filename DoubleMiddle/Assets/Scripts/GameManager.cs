@@ -50,6 +50,9 @@ public class GameManager : MonoBehaviour
     private AudioSource audioSource;
     public string music = "1";
 
+    //오토
+    public bool autoPerfect;
+
     //음악 실행
     void MusicStart()
     {
@@ -61,7 +64,7 @@ public class GameManager : MonoBehaviour
     }
 
     //음악 정지
-    bool pause = false;
+    public bool pause = false;
     public void pauseMusic()
     {
         if (pause)
@@ -104,10 +107,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         //사용자가 누른 라인 빛나게 처리
-        if (Input.GetKey(KeyCode.G)) ShineTrail(0);
-        if (Input.GetKey(KeyCode.H)) ShineTrail(1);
-        if (Input.GetKey(KeyCode.J)) ShineTrail(2);
-        if (Input.GetKey(KeyCode.Space)) ShineTrail(3);
+        if (Input.GetKey(KeyCode.G) && !pause) ShineTrail(0);
+        if (Input.GetKey(KeyCode.H) && !pause) ShineTrail(1);
+        if (Input.GetKey(KeyCode.J) && !pause) ShineTrail(2);
+        if (Input.GetKey(KeyCode.Space) && !pause) ShineTrail(3);
         for(int i = 0; i < trailSpriteRenderers.Length; i++)
         {
             Color color = trailSpriteRenderers[i].color;
