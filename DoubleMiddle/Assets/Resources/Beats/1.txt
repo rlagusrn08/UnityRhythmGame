@@ -1,6 +1,6 @@
 Our Inspiring Corporate
 Redafs.com
-118 30 2.64
+118 30 2.64 20000 15000 10000
 0 0
 1 2
 2 4

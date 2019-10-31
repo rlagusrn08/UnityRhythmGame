@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\NoteController.cs" />
     <Compile Include="Assets\Scripts\ObjectPooler.cs" />
     <Compile Include="Assets\Scripts\PlayerInformation.cs" />
+    <Compile Include="Assets\Scripts\SongSelectManager.cs" />
     <None Include="Assets\Resources\Beats\2.txt" />
     <None Include="Assets\Resources\Beats\3.txt" />
     <None Include="Assets\Resources\Beats\1.txt" />

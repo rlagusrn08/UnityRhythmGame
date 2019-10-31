@@ -7131,8 +7131,7 @@ MonoBehaviour:
   - {fileID: 2030905335}
   - {fileID: 30922457}
   - {fileID: 1394138595}
-  music: 1
-  autoPerfect: 1
+  autoPerfect: 0
   pause: 0
 --- !u!4 &1298713756
 Transform:

@@ -49,7 +49,6 @@ public class GameManager : MonoBehaviour
 
     //음악 처리
     private AudioSource audioSource;
-    public string music = "1";
 
     //오토
     public bool autoPerfect;
@@ -58,7 +57,7 @@ public class GameManager : MonoBehaviour
     void MusicStart()
     {
         //리소스에서 음악을 불러와 재생.
-        AudioClip audioClip = Resources.Load<AudioClip>("Beats/" + music);
+        AudioClip audioClip = Resources.Load<AudioClip>("Beats/" + PlayerInformation.selectedMusic);
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = audioClip;
         audioSource.Play();
