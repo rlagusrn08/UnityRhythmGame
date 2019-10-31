@@ -25,7 +25,7 @@ public class MenuManager : MonoBehaviour
 
     public void GameReset()
     {
-        SceneManager.LoadScene("SampleScene"); //임시 나중에 이름 수정
+        SceneManager.LoadScene("GameScenes");
         Time.timeScale = 1;
     }
 
@@ -49,8 +49,9 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    public void startMenu()
+    public void SongSelect()
     {
-        
+        SceneManager.LoadScene("SongSelect");
+        Time.timeScale = 1;
     }
 }

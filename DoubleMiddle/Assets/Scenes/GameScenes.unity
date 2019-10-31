@@ -203,7 +203,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1262792251}
-        m_MethodName: startMenu
+        m_MethodName: SongSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
