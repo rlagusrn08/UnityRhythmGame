@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "803087123895",
+    "firebase_url": "https://unitygameserverpractice.firebaseio.com",
+    "project_id": "unitygameserverpractice",
+    "storage_bucket": "unitygameserverpractice.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:803087123895:android:a1f8e1368e85b515255432",
+        "android_client_info": {
+          "package_name": "com.ptu.unityrhythmgame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "803087123895-7n6a2dtv3noi48k8hjf6k1idhdsp2h84.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3aeWfwO8ypBvY3t8FiRl2hvYM-idlH-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "803087123895-7n6a2dtv3noi48k8hjf6k1idhdsp2h84.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
