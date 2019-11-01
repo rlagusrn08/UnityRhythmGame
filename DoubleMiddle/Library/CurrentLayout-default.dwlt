@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 494}
+  m_MinSize: {x: 950, y: 472}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -45,7 +45,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 494}
+  m_MinSize: {x: 950, y: 472}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -113,10 +113,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 907, y: 444}
-  m_MaxSize: {x: 22002, y: 10000}
+  m_MinSize: {x: 913, y: 422}
+  m_MaxSize: {x: 22008, y: 10022}
   vertical: 0
-  controlID: 13889
+  controlID: 10272
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -138,10 +138,10 @@ MonoBehaviour:
     y: 0
     width: 1205
     height: 947
-  m_MinSize: {x: 202, y: 444}
-  m_MaxSize: {x: 4002, y: 8044}
+  m_MinSize: {x: 202, y: 422}
+  m_MaxSize: {x: 4002, y: 8022}
   vertical: 1
-  controlID: 13895
+  controlID: 10139
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -393,9 +393,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.1430551, y: -0.7909034, z: -3.125}
+    m_Target: {x: -1.6979592, y: 0.86083096, z: -13.357422}
     speed: 2
-    m_Value: {x: -1.1430551, y: -0.7909034, z: -3.125}
+    m_Value: {x: -1.6979592, y: 0.86083096, z: -13.357422}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -428,9 +428,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10.652036
+    m_Target: 8.500049
     speed: 2
-    m_Value: 10.652036
+    m_Value: 8.134018
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -510,7 +510,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -2676
+  m_LastSelectedObjectID: -12904
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -638,9 +638,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: c4300000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 1ebdffff4abdffff56c0ffff80c0ffffaac0ffff8cc1ffffb6c1ffff3cc3ffff08c8ffff52cfffff60d5ffff90d5ffffccdfffffa6e2ffffd8e2ffffaafaffffdefaffff76fbffff5c3500006635000090350000d63a0000e03a00000c3b000066430000264d0000ac4d0000cc4d00003a530000
+      m_ExpandedIDs: 56e6ffffeaf8ffff80faffffa4faffff76fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -703,19 +703,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Fonts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Fonts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\unity\2d\UnityRhythmGame\DoubleMiddle
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b82d0000
-    m_LastClickedID: 11704
+    m_SelectedIDs: 50310000
+    m_LastClickedID: 12624
     m_ExpandedIDs: 00000000382d0000362f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
