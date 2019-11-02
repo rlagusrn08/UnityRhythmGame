@@ -4,6 +4,7 @@ using UnityEngine;
 using Firebase.Auth;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 public class LoginManager : MonoBehaviour
 {
@@ -24,9 +25,10 @@ public class LoginManager : MonoBehaviour
     
     public void Login()
     {
+        messageUI.text = "로그인 확인중...";
         string email = emailInputField.text;
         string password = passwordInputField.text;
-
+        var content = TaskScheduler.FromCurrentSynchronizationContext();
         auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWith(
             task =>
             {
@@ -37,9 +39,10 @@ public class LoginManager : MonoBehaviour
                 }
                 else
                 {
-                    messageUI.text = "계정을 확인해주세요.";
+                    messageUI.text = "계정 또는 비밀번호를 확인해주세요.";
                 }
-            });
+            },content
+            );
     }
 
     public void GoToJoin()

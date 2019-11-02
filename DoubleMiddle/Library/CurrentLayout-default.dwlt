@@ -113,10 +113,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 911, y: 422}
-  m_MaxSize: {x: 22006, y: 10022}
+  m_MinSize: {x: 915, y: 422}
+  m_MaxSize: {x: 22010, y: 10022}
   vertical: 0
-  controlID: 5926
+  controlID: 1641
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 422}
   m_MaxSize: {x: 4002, y: 8022}
   vertical: 1
-  controlID: 5883
+  controlID: 1598
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -196,7 +196,7 @@ MonoBehaviour:
   - {fileID: 15}
   - {fileID: 16}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -393,9 +393,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.3248955, y: -1.8653922, z: -0.4538067}
+    m_Target: {x: -3.825742, y: 0.10341326, z: -3.0008173}
     speed: 2
-    m_Value: {x: -0.3248955, y: -1.8653922, z: -0.4538067}
+    m_Value: {x: -3.825742, y: 0.10341326, z: -3.0008173}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -428,9 +428,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 7.3152695
+    m_Target: 13.080696
     speed: 2
-    m_Value: 7.3152695
+    m_Value: 13.080696
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -638,9 +638,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ce310000
+      m_SelectedIDs: e62d0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 9adbffffb6dbffffb8dbffff48ddffffb6deffffe0deffff38f8ffff9efaffff76fbffff00370000
+      m_ExpandedIDs: 0ef4ffffe4f5ffff76fbfffff43300001a3400000a38000088380000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -703,20 +703,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\unity\2d\UnityRhythmGame\DoubleMiddle
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c82d0000
-    m_LastClickedID: 11720
-    m_ExpandedIDs: 00000000c82d00004832000000ca9a3b
+    m_SelectedIDs: 622e0000
+    m_LastClickedID: 11874
+    m_ExpandedIDs: 00000000cc2d00004e32000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -744,7 +744,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c82d00004832000000ca9a3b
+    m_ExpandedIDs: 00000000cc2d00004e32000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -796,7 +796,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 300}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 110

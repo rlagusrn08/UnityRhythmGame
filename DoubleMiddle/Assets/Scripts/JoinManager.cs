@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Firebase.Auth;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 public class JoinManager : MonoBehaviour
 {
@@ -50,6 +52,8 @@ public class JoinManager : MonoBehaviour
         }
         string email = emailInputField.text;
         string password = passwordInputField.text;
+        var content = TaskScheduler.FromCurrentSynchronizationContext();
+
         auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(
             task =>
             {
@@ -59,10 +63,15 @@ public class JoinManager : MonoBehaviour
                 }
                 else
                 {
-                    messageUI.text = "이미 사용 중이거나 형식이 올바르지 않습니다.";
+                    messageUI.text = "이미 사용 중이거나 이메일 형식이 올바르지 않습니다.";
                 }
             }
+            , content
             );
+    }
 
+    public void Back()
+    {
+        SceneManager.LoadScene("LoginScene");
     }
 }
