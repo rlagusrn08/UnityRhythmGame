@@ -15,6 +15,9 @@ public class SongSelectManager : MonoBehaviour
     private int musicIndex;
     private int musicCount = 3;
 
+    //회원가입 결과 UI
+    public Text userUI;
+
     private void UpdateSong(int musicIndex)
     {
         AudioSource audioSource = GetComponent<AudioSource>();
@@ -51,6 +54,7 @@ public class SongSelectManager : MonoBehaviour
 
     void Start()
     {
+        userUI.text = "ID: " + PlayerInformation.auth.CurrentUser.Email;
         musicIndex = 1;
         UpdateSong(musicIndex);
     }
@@ -59,5 +63,11 @@ public class SongSelectManager : MonoBehaviour
     {
         PlayerInformation.selectedMusic = musicIndex.ToString();
         SceneManager.LoadScene("GameScene");
+    }
+
+    public void LogOut()
+    {
+        PlayerInformation.auth.SignOut();
+        SceneManager.LoadScene("LoginScene");
     }
 }
