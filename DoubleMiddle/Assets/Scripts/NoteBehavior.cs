@@ -8,7 +8,7 @@ public class NoteBehavior : MonoBehaviour
     private GameManager.judges judge;
     private KeyCode keyCode; //테스트를 위한 키 입력
     bool pause;
-
+    
     void Start()
     {
         if (noteType == 1) keyCode = KeyCode.G;

@@ -58,6 +58,6 @@ public class SongSelectManager : MonoBehaviour
     public void GameStart()
     {
         PlayerInformation.selectedMusic = musicIndex.ToString();
-        SceneManager.LoadScene("GameScenes");
+        SceneManager.LoadScene("GameScene");
     }
 }

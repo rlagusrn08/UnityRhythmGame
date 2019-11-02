@@ -25,7 +25,7 @@ public class MenuManager : MonoBehaviour
 
     public void GameReset()
     {
-        SceneManager.LoadScene("GameScenes");
+        SceneManager.LoadScene("GameScene");
         Time.timeScale = 1;
     }
 
@@ -51,7 +51,7 @@ public class MenuManager : MonoBehaviour
 
     public void SongSelect()
     {
-        SceneManager.LoadScene("SongSelect");
+        SceneManager.LoadScene("SongSelectScene");
         Time.timeScale = 1;
     }
 }

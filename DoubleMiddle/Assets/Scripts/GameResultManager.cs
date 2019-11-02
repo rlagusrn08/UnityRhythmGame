@@ -48,12 +48,12 @@ public class GameResultManager : MonoBehaviour
 
     public void SongSelect()
     {
-        SceneManager.LoadScene("SongSelect");
+        SceneManager.LoadScene("SongSelectScene");
     }
 
     public void Replay()
     {
-        SceneManager.LoadScene("GameScenes");
+        SceneManager.LoadScene("GameScene");
     }
 
     // Update is called once per frame

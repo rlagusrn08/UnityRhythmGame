@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GameResultManager.cs" />
     <Compile Include="Assets\Scripts\JoinManager.cs" />
+    <Compile Include="Assets\Scripts\LoginManager.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\NoteBehavior.cs" />
     <Compile Include="Assets\Scripts\NoteController.cs" />
@@ -293,6 +294,9 @@
     <Reference Include="Firebase.App">
       <HintPath>D:/unity/2d/UnityRhythmGame/DoubleMiddle/Assets/Firebase/Plugins/Firebase.App.dll</HintPath>
     </Reference>
+    <Reference Include="Firebase.Auth">
+      <HintPath>D:/unity/2d/UnityRhythmGame/DoubleMiddle/Assets/Firebase/Plugins/Firebase.Auth.dll</HintPath>
+    </Reference>
     <Reference Include="Firebase.Crashlytics">
       <HintPath>D:/unity/2d/UnityRhythmGame/DoubleMiddle/Assets/Firebase/Plugins/Firebase.Crashlytics.dll</HintPath>
     </Reference>
@@ -310,9 +314,6 @@
     </Reference>
     <Reference Include="Unity.Tasks">
       <HintPath>D:/unity/2d/UnityRhythmGame/DoubleMiddle/Assets/Parse/Plugins/dotNet45/Unity.Tasks.dll</HintPath>
-    </Reference>
-    <Reference Include="Firebase.Auth">
-      <HintPath>D:/unity/2d/UnityRhythmGame/DoubleMiddle/Assets/Firebase/Plugins/Firebase.Auth.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.1f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

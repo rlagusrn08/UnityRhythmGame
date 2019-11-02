@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
     }
 
     //음악 정지
+    public bool isplaying = false;
     public bool pause = false;
     public void pauseMusic()
     {
@@ -74,15 +75,22 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            pause = true;
-            audioSource.Pause();
+            if (isplaying)
+            {
+                pause = true;
+                audioSource.Pause();
+            }
         }
+    }
+    public void PlayingGame()
+    {
+        isplaying = true;
     }
 
     void Start()
     {
         Invoke("MusicStart", 1); //1초 후 음악 재생
-
+        Invoke("PlayingGame", 1);
         judgementSpriteRenderer = judgeUI.GetComponent<Image>();
         judgementSpriteAnimator = judgeUI.GetComponent<Animator>();
         scoreText = scoreUI.GetComponent<Text>();

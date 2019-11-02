@@ -106,7 +106,7 @@ public class NoteController : MonoBehaviour
         PlayerInformation.score = (int)GameManager.instance.score;
         PlayerInformation.musicTitle = musicTitle;
         PlayerInformation.musicArtist = musicArtist;
-        SceneManager.LoadScene("GameResult");
+        SceneManager.LoadScene("GameResultScene");
     }
 
     // Update is called once per frame
