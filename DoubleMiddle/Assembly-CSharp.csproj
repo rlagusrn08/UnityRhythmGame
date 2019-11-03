@@ -78,8 +78,10 @@
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-crashlytics-unity\maven-metadata.xml" />
     <None Include="Assets\Resources\Beats\1.txt" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-app-unity\maven-metadata.xml" />
+    <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-database-unity\maven-metadata.xml" />
     <None Include="Assets\Firebase\Plugins\Crashlytics\link.xml" />
     <None Include="Assets\Firebase\Plugins\link.xml" />
+    <None Include="Assets\Firebase\Plugins\Http\link.xml" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-auth-unity\maven-metadata.xml" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/unity/2d/UnityRhythmGame/DoubleMiddle/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
@@ -314,6 +316,12 @@
     </Reference>
     <Reference Include="Unity.Tasks">
       <HintPath>D:/unity/2d/UnityRhythmGame/DoubleMiddle/Assets/Parse/Plugins/dotNet45/Unity.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Sharpen">
+      <HintPath>D:/unity/2d/UnityRhythmGame/DoubleMiddle/Assets/Firebase/Plugins/Google.Sharpen.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Database">
+      <HintPath>D:/unity/2d/UnityRhythmGame/DoubleMiddle/Assets/Firebase/Plugins/Firebase.Database.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.1f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
