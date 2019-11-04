@@ -23,6 +23,7 @@ public class SongSelectManager : MonoBehaviour
     private int musicIndex;
     private int musicCount = 3;
 
+    private DatabaseReference reference;
     //회원가입 결과 UI
     public Text userUI;
 
@@ -46,50 +47,62 @@ public class SongSelectManager : MonoBehaviour
         //이미지 파일 불러오기
         musicImageUI.sprite = Resources.Load<Sprite>("Beats/" + musicIndex.ToString());
 
-        /*
+        
         var content = TaskScheduler.FromCurrentSynchronizationContext();
         rank1UI.text = "데이터 불러오는 중...";
         rank2UI.text = "데이터 불러오는 중...";
         rank3UI.text = "데이터 불러오는 중...";
-        DatabaseReference reference;
+        
         FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://unitygameserverpractice.firebaseio.com/");
-        reference = FirebaseDatabase.DefaultInstance.GetReference("ranks")
-            .Child(PlayerInformation.selectedMusic);
-
+        reference = FirebaseDatabase.DefaultInstance.GetReference("ranks").Child(musicIndex.ToString());
         
         reference.OrderByChild("score").GetValueAsync().ContinueWith(
             task =>
             {
-            if (task.IsCompleted)
-            {
-                List<string> rankList = new List<string>();
-                List<string> emailList = new List<string>();
-                DataSnapshot snapshot = task.Result;
-
-                foreach (DataSnapshot data in snapshot.Children)
+                if (task.IsCompleted)
                 {
-                    IDictionary rank = (IDictionary)data.Value;
-                    emailList.Add(rank["eamil"].ToString());
-                    rankList.Add(rank["eamil"].ToString());
-                }
-                emailList.Reverse();
-                rankList.Reverse();
-                rank1UI.text = "";
-                rank2UI.text = "";
-                rank3UI.text = "";
-                List<Text> textList = new List<Text>();
-                textList.Add(rank1UI);
-                textList.Add(rank2UI);
-                textList.Add(rank3UI);
-                int count = 1;
-                for (int i = 0; i < rankList.Count && i < 3; i++)
-                {
-                    textList[i].text = count + "위: " + emailList[i] + " (" + rankList[i];
+                    List<string> rankList = new List<string>();
+                    List<string> emailList = new List<string>();
+                    DataSnapshot snapshot = task.Result;
+                    Debug.Log("데이터 불러오기 성공");
+                    foreach (DataSnapshot data in snapshot.Children)
+                    {
+                        IDictionary rank = (IDictionary)data.Value;
+                        emailList.Add(rank["email"].ToString());
+                        rankList.Add(rank["score"].ToString());
+                        Debug.Log(rank["email"].ToString() + " " + rank["score"].ToString());
                     }
-                }  
-            }, content
+                    Debug.Log(rankList.Count);
+                    Debug.Log("이메일 배열 리버스");
+                    emailList.Reverse();
+                    Debug.Log("랭킹 배열 리버스");
+                    rankList.Reverse();
+                    Debug.Log("랭킹 텍스트 공백으로 처리");
+                    rank1UI.text = "1위: NONE";
+                    rank2UI.text = "2위: NONE";
+                    rank3UI.text = "3위: NONE";
+                    Debug.Log("랭킹 UI를 담을 배열 생성");
+                    List<Text> textList = new List<Text>();
+                    textList.Add(rank1UI);
+                    textList.Add(rank2UI);
+                    textList.Add(rank3UI);
+                    int count = 1;
+                    for (int i = 0; i < rankList.Count && i < 3; i++)
+                    {
+                        Debug.Log(count + "위: " + emailList[i] + " " + rankList[i]);
+                        textList[i].text = count + "위: " + emailList[i] + " " + rankList[i] +"점";
+                        count++;
+                    }
+                }
+                else if (task.IsFaulted)
+                {
+                    Debug.Log("데이터 불러오기 실패");
+                }
+
+            }
+            , content
         );
-        */
+
     }
 
     public void Right()
@@ -108,6 +121,7 @@ public class SongSelectManager : MonoBehaviour
     void Start()
     {
         userUI.text = "ID: " + PlayerInformation.auth.CurrentUser.Email;
+        reference = FirebaseDatabase.DefaultInstance.RootReference;
         musicIndex = 1;
         UpdateSong(musicIndex);
     }

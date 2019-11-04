@@ -19,6 +19,7 @@ public class LoginManager : MonoBehaviour
    
     void Start()
     {
+        Screen.SetResolution(1200, 1920, true);
         auth = FirebaseAuth.DefaultInstance;
         messageUI.text = "";
     }

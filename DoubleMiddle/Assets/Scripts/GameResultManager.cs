@@ -5,6 +5,10 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.IO;
 using System;
+using Firebase;
+using Firebase.Database;
+using Firebase.Unity.Editor;
+using System.Threading.Tasks;
 
 public class GameResultManager : MonoBehaviour
 {
@@ -13,9 +17,14 @@ public class GameResultManager : MonoBehaviour
     public Text maxComboUI;
     public Image RankUI;
 
+    public Text rank1UI;
+    public Text rank2UI;
+    public Text rank3UI;
+
     // Start is called before the first frame update
     void Start()
     {
+
         musicTitleUI.text = PlayerInformation.musicTitle;
         scoreUI.text = "Score : " + PlayerInformation.score;
         maxComboUI.text = "MaxCombo : " + PlayerInformation.maxCombo;

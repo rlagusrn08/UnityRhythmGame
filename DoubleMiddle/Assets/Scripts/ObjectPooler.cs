@@ -8,7 +8,7 @@ public class ObjectPooler : MonoBehaviour
 
     public List<GameObject> Notes;
     private List<List<GameObject>> poolsOfNotes;
-    public int noteCount = 10;
+    public int noteCount = 20;
     private bool more = true;
 
     void Start()
@@ -26,6 +26,16 @@ public class ObjectPooler : MonoBehaviour
         }
     }
 
+    public void Judge(int noteType)
+    {
+        foreach(GameObject obj in poolsOfNotes[noteType - 1])
+        {
+            if (obj.activeInHierarchy)
+            {
+                obj.GetComponent<NoteBehavior>().Judge();
+            }
+        }
+    }
     public GameObject getObject(int noteType)
     {
         foreach(GameObject obj in poolsOfNotes[noteType - 1])

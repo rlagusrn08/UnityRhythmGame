@@ -42,6 +42,16 @@ public class NoteBehavior : MonoBehaviour
         }
     }
 
+    public void Judge()
+    {
+        GameManager.instance.processJudge(judge, noteType);
+        // 판정 선에 닿기 시작한 이후로는 노트 제거
+        if (judge != GameManager.judges.NONE)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
     //각 노트의 현재 위치에 따른 판정 수행
     private void OnTriggerEnter2D(Collider2D other)
     {
