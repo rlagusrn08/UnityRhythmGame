@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
     public GameObject noteObjectPooler;
     private ObjectPooler objectPooler;
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
 
         if (Input.touchCount > 0)
@@ -128,22 +128,22 @@ public class GameManager : MonoBehaviour
                    RaycastHit hit;
                    if (Physics.Raycast(ray, out hit, Mathf.Infinity))
                    {
-                       if (hit.collider.name == "Touch 1")
+                       if (hit.collider.name == "Touch 1" && !pause)
                        {
                            ShineTrail(0);
                            objectPooler.Judge(1);
                        }
-                       if (hit.collider.name == "Touch 2")
+                       if (hit.collider.name == "Touch 2" && !pause)
                        {
                            ShineTrail(1);
                            objectPooler.Judge(2);
                        }
-                       if (hit.collider.name == "Touch 3")
+                       if (hit.collider.name == "Touch 3" && !pause)
                        {
                            ShineTrail(2);
                            objectPooler.Judge(3);
                        }
-                       if (hit.collider.name == "Touch 4")
+                       if (hit.collider.name == "Touch 4" && !pause)
                        {
                            ShineTrail(3);
                            objectPooler.Judge(4);
@@ -151,7 +151,7 @@ public class GameManager : MonoBehaviour
                    }
                 }
             }
-            /*
+            
             if(Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)|| Input.GetMouseButtonDown(2)|| Input.GetMouseButtonDown(3))
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -179,7 +179,7 @@ public class GameManager : MonoBehaviour
                     }
                 }
             }
-            */
+            
             //사용자가 누른 라인 빛나게 처리
             if (Input.GetKey(KeyCode.G) && !pause) ShineTrail(0);
             if (Input.GetKey(KeyCode.H) && !pause) ShineTrail(1);
@@ -191,6 +191,58 @@ public class GameManager : MonoBehaviour
                 color.a -= 0.01f;
                 trailSpriteRenderers[i].color = color;
             }
+        }
+    }*/
+
+    void Update()
+    {
+        // 터치가 1개 이상 발생하고 있다면
+        if (Input.touchCount > 0)
+        {
+            for (int i = 0; i < Input.touchCount; i++)
+            {
+                Touch tempTouch = Input.GetTouch(i);
+                if (tempTouch.phase == TouchPhase.Began)
+                {
+                    Ray ray = Camera.main.ScreenPointToRay(tempTouch.position);
+                    RaycastHit hit;
+                    if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+                    {
+                        if (hit.collider.name == "Touch 1" && !pause)
+                        {
+                            ShineTrail(0);
+                            objectPooler.Judge(1);
+                        }
+                        if (hit.collider.name == "Touch 2" && !pause)
+                        {
+                            ShineTrail(1);
+                            objectPooler.Judge(2);
+                        }
+                        if (hit.collider.name == "Touch 3" && !pause)
+                        {
+                            ShineTrail(2);
+                            objectPooler.Judge(3);
+                        }
+                        if (hit.collider.name == "Touch 4" && !pause)
+                        {
+                            ShineTrail(3);
+                            objectPooler.Judge(4);
+                        }
+                    }
+                }
+            }
+        }
+        // 사용자가 입력한 키에 해당하는 라인을 빛나게 처리합니다.
+        if (Input.GetKey(KeyCode.G) && !pause) ShineTrail(0);
+        if (Input.GetKey(KeyCode.H) && !pause) ShineTrail(1);
+        if (Input.GetKey(KeyCode.J) && !pause) ShineTrail(2);
+        if (Input.GetKey(KeyCode.Space) && !pause) ShineTrail(3);
+        // 한 번 빛나게 된 라인은 반복적으로 다시 어둡게 처리합니다.
+        for (int i = 0; i < trailSpriteRenderers.Length; i++)
+        {
+            Color color = trailSpriteRenderers[i].color;
+            color.a -= 0.01f;
+            trailSpriteRenderers[i].color = color;
         }
     }
 
