@@ -53,7 +53,7 @@ public class JoinManager : MonoBehaviour
         string email = emailInputField.text;
         string password = passwordInputField.text;
         var content = TaskScheduler.FromCurrentSynchronizationContext();
-
+        messageUI.text = "잠시만 기다려주세요.";
         auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(
             task =>
             {

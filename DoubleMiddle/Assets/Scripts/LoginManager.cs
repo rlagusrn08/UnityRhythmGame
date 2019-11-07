@@ -8,13 +8,21 @@ using System.Threading.Tasks;
 
 public class LoginManager : MonoBehaviour
 {
+    public static LoginManager instance { get; set; }
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        else if (instance != this) Destroy(gameObject);
+    }
+
     private FirebaseAuth auth;
 
     //이메일 및 패스워드 UI
     public InputField emailInputField;
     public InputField passwordInputField;
-
     public Text messageUI;
+
+    public bool islogin = false;
 
    
     void Start()
@@ -35,6 +43,7 @@ public class LoginManager : MonoBehaviour
             {
                 if (task.IsCompleted && !task.IsCanceled && !task.IsFaulted)
                 {
+                    islogin = true;
                     PlayerInformation.auth = auth;
                     SceneManager.LoadScene("SongSelectScene");
                 }
@@ -44,6 +53,11 @@ public class LoginManager : MonoBehaviour
                 }
             },content
             );
+    }
+
+    public void NoLogin()
+    {
+        SceneManager.LoadScene("SongSelectScene");
     }
 
     public void GoToJoin()

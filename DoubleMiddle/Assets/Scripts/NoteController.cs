@@ -109,7 +109,10 @@ public class NoteController : MonoBehaviour
         PlayerInformation.score = (int)GameManager.instance.score;
         PlayerInformation.musicTitle = musicTitle;
         PlayerInformation.musicArtist = musicArtist;
-        AddRank();
+        if (LoginManager.instance.islogin)
+        {
+            AddRank();
+        }
         SceneManager.LoadScene("GameResultScene");
     }
 

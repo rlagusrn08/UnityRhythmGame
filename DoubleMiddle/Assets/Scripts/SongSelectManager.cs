@@ -26,6 +26,8 @@ public class SongSelectManager : MonoBehaviour
     private DatabaseReference reference;
     //회원가입 결과 UI
     public Text userUI;
+   
+    
 
     private void UpdateSong(int musicIndex)
     {
@@ -119,8 +121,15 @@ public class SongSelectManager : MonoBehaviour
     }
 
     void Start()
-    {
-        userUI.text = "ID: " + PlayerInformation.auth.CurrentUser.Email;
+    {  
+        if (LoginManager.instance.islogin)
+        {
+            userUI.text = "ID: " + PlayerInformation.auth.CurrentUser.Email;
+        }
+        else
+        {
+            userUI.text = "게스트 로그인";
+        }
         reference = FirebaseDatabase.DefaultInstance.RootReference;
         musicIndex = 1;
         UpdateSong(musicIndex);
@@ -134,7 +143,10 @@ public class SongSelectManager : MonoBehaviour
 
     public void LogOut()
     {
-        PlayerInformation.auth.SignOut();
+        if (LoginManager.instance.islogin)
+        {
+            PlayerInformation.auth.SignOut();
+        }
         SceneManager.LoadScene("LoginScene");
     }
 }
