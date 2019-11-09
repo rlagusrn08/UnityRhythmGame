@@ -27,6 +27,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -630,7 +631,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: e38ffd2fd670ebb8ca5d1fa17a29925d
+      Hash: 1b0a0ba0ea52399b57a576d7fa952d11
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LoginManager
@@ -821,4 +822,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/SongSelectScene.unity
   - Assets/Scenes/GameScene.unity
   - Assets/Scenes/GameResultScene.unity
-  playerPath: D:/unity/apk/rhythmgame/0.1.7.apk
+  playerPath: D:/unity/apk/rhythmgame/0.1.aab

@@ -34,7 +34,7 @@ public class SongSelectManager : MonoBehaviour
         AudioSource audioSource = GetComponent<AudioSource>();
         audioSource.Stop();
         //리소스에서 비트 텍스트 파일 불러오기
-        TextAsset textAsset = Resources.Load<TextAsset>("Beats/" + musicIndex.ToString());
+        TextAsset textAsset = textAssets[musicIndex - 1];
         StringReader stringReader = new StringReader(textAsset.text);
         // 파일 읽고 UI업데이트
         musicTitleUI.text = stringReader.ReadLine();
@@ -42,14 +42,14 @@ public class SongSelectManager : MonoBehaviour
         bpmUI.text = "BPM: " + stringReader.ReadLine().Split(' ')[0];
 
         //리소스에서 음악파일 불러와 재생
-        AudioClip audioClip = Resources.Load<AudioClip>("Beats/" + musicIndex.ToString());
+        AudioClip audioClip = audioClips[musicIndex - 1];
         audioSource.clip = audioClip;
         audioSource.Play();
 
         //이미지 파일 불러오기
-        musicImageUI.sprite = Resources.Load<Sprite>("Beats/" + musicIndex.ToString());
+        musicImageUI.sprite = sprites[musicIndex - 1];
 
-        
+
         var content = TaskScheduler.FromCurrentSynchronizationContext();
         rank1UI.text = "데이터 불러오는 중...";
         rank2UI.text = "데이터 불러오는 중...";
@@ -120,8 +120,23 @@ public class SongSelectManager : MonoBehaviour
         UpdateSong(musicIndex);
     }
 
+    Sprite[] sprites;
+    AudioClip[] audioClips;
+    TextAsset[] textAssets;
+
     void Start()
-    {  
+    {
+        sprites = new Sprite[musicCount];
+        audioClips = new AudioClip[musicCount];
+        textAssets = new TextAsset[musicCount];
+
+        for(int i = 1; i<=musicCount; i++)
+        {
+            sprites[i - 1] = Resources.Load<Sprite>("Beats/" + i.ToString());
+            audioClips[i - 1] = Resources.Load<AudioClip>("Beats/" + i.ToString());
+            textAssets[i - 1] = Resources.Load<TextAsset>("Beats/" + i.ToString());
+        }
+
         if (LoginManager.instance.islogin)
         {
             userUI.text = "ID: " + PlayerInformation.auth.CurrentUser.Email;
